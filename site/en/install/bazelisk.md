@@ -7,26 +7,17 @@ Book: /_book.yaml
 
 ## Installing Bazel
 
-[Bazelisk](https://github.com/bazelbuild/bazelisk){: .external} is the
-recommended way to install Bazel on Ubuntu, Windows, and macOS. It automatically
-downloads and installs the appropriate version of Bazel. Use Bazelisk if you
-need to switch between different versions of Bazel depending on the current
-working directory, or to always keep Bazel updated to the latest release.
-
-For more details, see
-[the official README](https://github.com/bazelbuild/bazelisk/blob/master/README.md){: .external}.
+* [Bazelisk](https://github.com/bazelbuild/bazelisk){: .external} 
+  * 👀if you need to switch between DIFFERENT versions of Bazel / depend on the current working directory -> AUTOMATICALLY downloads & installs the appropriate version of Bazel 👀
+  * see [the official README](https://github.com/bazelbuild/bazelisk/blob/master/README.md){: .external}
 
 ## Updating Bazel
 
-Bazel has a [backward compatibility policy](/release/backward-compatibility)
-(see [guidance for rolling out incompatible
-changes](/contribute/breaking-changes) if you
-are the author of one). That page summarizes best practices on how to test and
-migrate your project with upcoming incompatible changes and how to provide
-feedback to the incompatible change authors.
+* Bazel has a [backward compatibility policy](../release/backward-compatibility)
 
-### Managing Bazel versions with Bazelisk {:#manage-with-bazelisk}
+### Managing Bazel versions -- via -- Bazelisk {:#manage-with-bazelisk}
 
+* TODO:
 [Bazelisk](https://github.com/bazelbuild/bazelisk){: .external} helps you manage
 Bazel versions.
 
