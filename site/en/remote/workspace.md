@@ -1,10 +1,23 @@
 Project: /_project.yaml
 Book: /_book.yaml
 
+* workspace
+  * := directory / holds
+    * YOUR project's
+      * source files
+      * Bazel's build outputs
+    * special Bazel files
+      * `MODULE.bazel`
+        * 💡-> directory + its contents == Bazel workspace 💡
+        * places | root of the project's directory structure
+      * \>= 1 `BUILD` files 
+        * == how to build different parts of the project
+
 # Finding Non-Hermetic Behavior in WORKSPACE Rules
 
 {% include "_buttons.html" %}
 
+* TODO:
 In the following, a host machine is the machine where Bazel runs.
 
 When using remote execution, the actual build and/or test steps are not
