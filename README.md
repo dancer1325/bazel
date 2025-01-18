@@ -1,25 +1,46 @@
 # [Bazel](https://bazel.build)
 
-*{Fast, Correct} - Choose two*
+* allows
+  * building and test software
+    * of any size,
+    * quickly
+    * reliably
 
-Build and test software of any size, quickly and reliably.
+* **Speed up your builds and tests**
+  * thanks to
+    * rebuilds ONLY what is necessary 
+    * parallel execution
+    * caching
+      * advanced local
+      * distributed 
 
-* **Speed up your builds and tests**:
-  Bazel rebuilds only what is necessary.
-  With advanced local and distributed caching, optimized dependency analysis and
-  parallel execution, you get fast and incremental builds.
+* **1 tool / AVAILABLE | MULTIPLE**
+  * languages**
+    * == you can build and test
+      * Java,
+      * C++,
+      * Android,
+      * iOS,
+      * Go,
+      * ... 
+  * platforms 
+    * Windows,
+    * macOS,
+    * Linux
 
-* **One tool, multiple languages**: Build and test Java, C++, Android, iOS, Go,
-  and a wide variety of other language platforms. Bazel runs on Windows, macOS,
-  and Linux.
+* **Scalable**
+  * == scale your
+    * organization,
+    * codebase / can be
+      * multi-repo
+      * monorepo
+    * CI solution
 
-* **Scalable**: Bazel helps you scale your organization, codebase, and
-  continuous integration solution. It handles codebases of any size, in multiple
-  repositories or a huge monorepo.
-
-* **Extensible to your needs**: Easily add support for new languages and
-  platforms with Bazel's familiar extension language. Share and re-use language
-  rules written by the growing Bazel community.
+* **Extensible**
+  * == add support | NEW 
+    * languages
+    * platforms
+  * shared community rules
 
 ## Getting Started
 
@@ -42,17 +63,6 @@ Build and test software of any size, quickly and reliably.
   * [Roadmap](https://bazel.build/community/roadmaps)
   * [Who is using Bazel?](https://bazel.build/community/users)
 
-## Reporting a Vulnerability
-
-To report a security issue, please email security@bazel.build with a description
-of the issue, the steps you took to create the issue, affected versions, and, if
-known, mitigations for the issue. Our vulnerability management team will respond
-within 3 working days of your email. If the issue is confirmed as a
-vulnerability, we will open a Security Advisory. This project follows a 90 day
-disclosure timeline.
-
 ## Contributing to Bazel
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-[![Build status](https://badge.buildkite.com/1fd282f8ad98c3fb10758a821e5313576356709dd7d11e9618.svg?status=master)](https://buildkite.com/bazel/bazel-bazel)
