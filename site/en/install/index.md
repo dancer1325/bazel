@@ -6,17 +6,16 @@ Book: /_book.yaml
 {% dynamic setvar source_file "site/en/install/index.md" %}
 {% include "_buttons.html" %}
 
-This page describes the various platforms supported by Bazel and links
-to the packages for more details.
-
-[Bazelisk](/install/bazelisk) is the recommended way to install Bazel on [Ubuntu Linux](/install/ubuntu), [macOS](/install/os-x), and [Windows](/install/windows).
-
-You can find available Bazel releases on our [release page](/release).
+* platforms / supported by Bazel
+  * [Bazelisk](bazelisk)
+    * 👀recommended one 👀 / AVAILABLE |
+      * [Ubuntu Linux](ubuntu),
+      * [macOS](os-x),
+      * [Windows](windows)
 
 ## Community-supported packages {:#community-supported-packages}
 
-Bazel community members maintain these packages. The Bazel team doesn't
-officially support them. Contact the package maintainers for support.
+* == NOT -- maintained by -- Bazel team
 
 *   [Alpine Linux](https://pkgs.alpinelinux.org/packages?name=bazel*&branch=edge&repo=&arch=&origin=&flagged=&maintainer=){: .external}
 *   [Arch Linux][arch]{: .external}
@@ -30,8 +29,8 @@ officially support them. Contact the package maintainers for support.
 
 ## Community-supported architectures {:#community-supported-architectures}
 
-*   [ppc64el](https://ftp2.osuosl.org/pub/ppc64el/bazel/){: .external}
-
-For other platforms, you can try to [compile from source](/install/compile-source).
+* [ppc64el](https://ftp2.osuosl.org/pub/ppc64el/bazel/){: .external}
+* | OTHERS,
+  * [compile from source](compile-source)
 
 [arch]: https://archlinux.org/packages/extra/x86_64/bazel/
