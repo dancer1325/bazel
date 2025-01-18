@@ -5,98 +5,64 @@ Book: /_book.yaml
 
 {% include "_buttons.html" %}
 
-This tutorial covers the basics of building Java applications with
-Bazel. You will set up your workspace and build a simple Java project that
-illustrates key Bazel concepts, such as targets and `BUILD` files.
+* goal
+  * build a Java applications -- via -- Bazel
+  * build a target
+  * visualize the project's dependencies
+  * split the project | MULTIPLE targets and packages
+  * control target visibility / ACROSS packages
+  * reference targets -- through -- labels
+  * deploy a target
 
-Estimated completion time: 30 minutes.
+* steps
+  * set up your workspace
+  * build a simple Java project /
+    * explain Bazel concepts
+      * targets
+      * `BUILD` files
 
-## What you'll learn
+## Requirements
 
-In this tutorial you learn how to:
+* [install Bazel](../install)
+* install JDK
+  * versions
+    * support [v8, v15]
+    * 👀v11, recommended 👀
+* `git clone https://github.com/bazelbuild/examples`
+* see `examples/java-tutorial`
+  * structure
 
-*  Build a target
-*  Visualize the project's dependencies
-*  Split the project into multiple targets and packages
-*  Control target visibility across packages
-*  Reference targets through labels
-*  Deploy a target
+    ```
+    java-tutorial
+    ├── BUILD
+    ├── src
+    │   └── main
+    │       └── java
+    │           └── com
+    │               └── example
+    │                   ├── cmdline
+    │                   │   ├── BUILD
+    │                   │   └── Runner.java
+    │                   ├── Greeting.java
+    │                   └── ProjectRunner.java
+    └── MODULE.bazel
+    ```
 
-## Before you begin
-
-### Install Bazel
-
-To prepare for the tutorial, first [Install Bazel](/install) if
-you don't have it installed already.
-
-### Install the JDK
-
-1.  Install Java JDK (preferred version is 11, however versions between 8 and 15 are supported).
-
-2.  Set the JAVA\_HOME environment variable to point to the JDK.
-    *   On Linux/macOS:
-
-            export JAVA_HOME="$(dirname $(dirname $(realpath $(which javac))))"
-    *   On Windows:
-        1.  Open Control Panel.
-        2.  Go to "System&nbsp;and&nbsp;Security" &gt; "System" &gt; "Advanced&nbsp;System&nbsp;Settings" &gt; "Advanced"&nbsp;tab &gt; "Environment&nbsp;Variables..." .
-        3.  Under the "User&nbsp;variables" list (the one on the top), click "New...".
-        4.  In the "Variable&nbsp;name" field, enter `JAVA_HOME`.
-        5.  Click "Browse&nbsp;Directory...".
-        6.  Navigate to the JDK directory (for example `C:\Program Files\Java\jdk1.8.0_152`).
-        7.  Click "OK" on all dialog windows.
-
-### Get the sample project
-
-Retrieve the sample project from Bazel's GitHub repository:
-
-```posix-terminal
-git clone https://github.com/bazelbuild/examples
-```
-
-The sample project for this tutorial is in the `examples/java-tutorial`
-directory and is structured as follows:
-
-```
-java-tutorial
-├── BUILD
-├── src
-│   └── main
-│       └── java
-│           └── com
-│               └── example
-│                   ├── cmdline
-│                   │   ├── BUILD
-│                   │   └── Runner.java
-│                   ├── Greeting.java
-│                   └── ProjectRunner.java
-└── MODULE.bazel
-```
-
-## Build with Bazel
+## How to build ?
 
 ### Set up the workspace
 
-Before you can build a project, you need to set up its workspace. A workspace is
-a directory that holds your project's source files and Bazel's build outputs. It
-also contains files that Bazel recognizes as special:
-
-*  The `MODULE.bazel` file, which identifies the directory and its contents as a
-   Bazel workspace and lives at the root of the project's directory structure,
-
-*  One or more `BUILD` files, which tell Bazel how to build different parts of
-   the project. (A directory within the workspace that contains a `BUILD` file
-   is a *package*. You will learn about packages later in this tutorial.)
-
-To designate a directory as a Bazel workspace, create an empty file named
-`MODULE.bazel` in that directory.
-
-When Bazel builds the project, all inputs and dependencies must be in the same
-workspace. Files residing in different workspaces are independent of one
-another unless linked, which is beyond the scope of this tutorial.
+* | BEFORE build the project
+  * REQUIRED
+  * 👀create `MODULE.bazel` 👀
+* | build the project -- by -- Bazel,
+  * ALL inputs & dependencies MUST be | SAME workspace 
+    * Reason: 🧠 files / place | DIFFERENT workspaces -> independent 🧠
+    * if you want to use OTHER workspace's dependencies -> link it
 
 ### Understand the BUILD file
 
+* TODO:
 A `BUILD` file contains several different types of instructions for Bazel.
 The most important type is the *build rule*, which tells Bazel how to build the
 desired outputs, such as executable binaries or libraries. Each instance
